@@ -46,14 +46,20 @@ section {
     width: 100%;
     min-height: calc(100vh - 120px);
     position: relative;
+    overflow: hidden;
     div.myName {
+      width: 100%;
       position: relative;
       top: calc(50vh - 60px);
+      // top: 0px;
+      // height: 400px;
+      display: inline-block;
       // height:400px;
-      transform: translateY(-52%);
+      transform: translateY(-52%) translateX(0%);
       // padding-top: 100px;
-      // background: red;
+      background: red;
       span {
+        // line-height: 100%;
         font-size: 12vw;
         display: block;
         margin-left: 5%;
@@ -73,6 +79,34 @@ section {
         font-weight:100;
         font-size: 1.9vw;
         margin-top: -2%;
+      }
+    }
+    div.aboutMe {
+      padding: 50px;
+      top: calc(50vh - 60px);
+      top: 0px;
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      background: green;
+      height: 100%;
+      transform: translateX(0%);
+      font-size: 2vw;
+      float: left;
+      opacity: 0.3;
+    }
+    h3.discover {
+      text-transform: uppercase;
+      font-family: 'Roboto', sans-serif;
+      position: absolute;
+      bottom: 5px;
+      width: 100%;
+      text-align: center;
+      font-weight: 100;
+      font-size: 15px;
+      a {
+        text-decoration: none;
+        color: black;
       }
     }
     div.myProjects {
