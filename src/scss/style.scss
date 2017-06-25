@@ -4,24 +4,31 @@
   border: none;
   box-sizing: border-box;
 }
+$grey: #282533;
+$white: #E7DFDD;
+$black: #0E0B16;
+$purple: #A239CA;
+$blue: #4717F6;
 
 html {
   height: 100%;
 }
 body {
+  margin-top: -3px;
   height: 100%;
   font-family: 'Roboto Slab', serif;
-  color: navy;
+  color: $blue;
+  background: $black;
 }
 
 div.lineOverlay {
   margin-top: -60px;
   height: 100%;
   margin-right: 0.5px;
-  border-right: 1px solid grey;
+  border-right: 1px solid $grey;
   position: absolute;
   z-index: 200;
-  background: grey;
+  background: $grey;
   &:nth-of-type(1){
     left:60px;
   }
@@ -40,13 +47,15 @@ section {
   top: 0;
   bottom: 0;
   padding: 60px;
+  border-bottom: 1px solid $blue;
+  overflow: hidden;
   div.inner {
-    border: 1px solid grey;
+    border: 1px solid $grey;
     display: block;
     width: 100%;
     min-height: calc(100vh - 120px);
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     div.myName {
       width: 100%;
       position: relative;
@@ -57,7 +66,7 @@ section {
       // height:400px;
       transform: translateY(-52%) translateX(0%);
       // padding-top: 100px;
-      background: red;
+      // background: red;
       span {
         // line-height: 100%;
         font-size: 12vw;
@@ -79,34 +88,58 @@ section {
         font-weight:100;
         font-size: 1.9vw;
         margin-top: -2%;
+        color: $white;
       }
     }
     div.aboutMe {
-      padding: 50px;
+      padding: 5%;
       top: calc(50vh - 60px);
       top: 0px;
       position: absolute;
       display: inline-block;
       width: 100%;
-      background: green;
+      // background: green;
       height: 100%;
       transform: translateX(0%);
       font-size: 2vw;
       float: left;
       opacity: 0.3;
+      display: none;
+    }
+    h3.about {
+      text-transform: uppercase;
+      font-family: 'Roboto', sans-serif;
+      position: absolute;
+      right: -42px;
+      color: $blue;
+      top:48%;
+      // width: 330px;
+      font-size: 17px;
+      line-height: 25px;
+      text-align: center;
+      transform: rotate(-90deg) translateY(30px);
+      // transform: translateY(-50%);
+      font-weight: 100;
+      // background: white;
+      cursor: pointer;
     }
     h3.discover {
       text-transform: uppercase;
       font-family: 'Roboto', sans-serif;
       position: absolute;
-      bottom: 5px;
+      z-index: 200;
+      line-height: 25px;
+      bottom: -12px;
       width: 100%;
       text-align: center;
       font-weight: 100;
-      font-size: 15px;
+      font-size: 13px;
+      background: white;
+      width: 200px;
+      left: calc(50% - 100px);
       a {
         text-decoration: none;
-        color: black;
+        color: $black;
       }
     }
     div.myProjects {
@@ -114,6 +147,7 @@ section {
       h3 {
         text-align: center;
         font-size: 6vw;
+        color: $white;
       }
     }
     div.project {
@@ -124,26 +158,29 @@ section {
       width: 60%;
       height: 150px;
       min-height: 0px;
-      border-top: 1px solid grey;
-      border-left: 1px solid grey;
-      border-right: 1px solid grey;
-      border-bottom: 1px solid grey;
+      border-top: 1px solid $grey;
+      border-left: 1px solid $grey;
+      border-right: 1px solid $grey;
+      border-bottom: 1px solid $grey;
       margin: 0 auto;
       margin-top: -1px;
-      background: #f6f6f6;
+      background: $black;
       &:last-child {
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $grey;
         margin-bottom: 15%;
       }
       h4 {
         transform: translateY(-85%);
         position: relative;
         top: 50%;
-        // background: red;
+        color: $white;
         line-height: 100%;
         font-size: 2.5vw;
       }
       p {
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
         transform: translateY(-95%);
         position: relative;
         top: 50%;
@@ -153,14 +190,17 @@ section {
       }
       div.imageBox {
         background: black;
-        color: #0c2244;
-        line-height: 150px;
+        color: $black;
+        line-height: 149px;
         text-align: center;
         font-size: 10vw;
         display: inline-block;
-        border-right: 1px solid grey;
-        height: 150px;
+        border-right: 1px solid $grey;
+        border-bottom: 1px solid $grey;
+        overflow: hidden;
+        height: 149px;
         width: 150px;
+        font-weight: 600;
         position: absolute;
         left: 0;
         top: 0;
@@ -170,7 +210,7 @@ section {
         div.imageBox {
           // width: 80%;
         }
-        // border-bottom: 1px solid grey;
+        // border-bottom: 1px solid $grey;
         // margin-bottom: 10%;
       }
     }
@@ -182,44 +222,47 @@ div.box {
   height: 61px;
   position: absolute;
   &.topLeft {
-    border-right: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border-right: 1px solid $grey;
+    border-bottom: 1px solid $grey;
     top: 0;
     left: 0;
   }
   &.topRight {
-    border-left: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border-left: 1px solid $grey;
+    border-bottom: 1px solid $grey;
     top: 0;
     right: 0;
   }
   &.bottomLeft {
-    border-right: 1px solid grey;
-    border-top: 1px solid grey;
+    border-right: 1px solid $grey;
+    border-top: 1px solid $grey;
     bottom: 0;
     left: 0;
   }
   &.bottomRight {
-    border-left: 1px solid grey;
-    border-top: 1px solid grey;
+    border-left: 1px solid $grey;
+    border-top: 1px solid $grey;
     bottom: 0;
     right: 0;
   }
 }
 
 footer {
-  height: 250px;
-  background: black;
+  height: 350px;
+  background: $blue;
   text-align: center;
   position: relative;
   h3 {
+    background: white;
     position: relative;
     display: block;
     top:30%;
+    width: 100px;
+    margin: 0 auto;
     // transform: translateY(-50%);
-    font-size: 1.5vw;
-    color: white;
-    line-height: 50px;
+    font-size: 13px;
+    color: $black;
+    line-height: 25px;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-weight:100;
@@ -228,12 +271,12 @@ footer {
   div {
     display: block;
     position: relative;
-    top:35%;
+    top:42%;
     transform: translateY(-50%);
     span {
       margin: 0 10px;
       display: inline-block;
-      font-size: 1.3vw;
+      font-size: 24px;
       a {
         text-decoration: none;
         color: white;
@@ -253,7 +296,7 @@ footer {
 //   div.myName {
 //     font-size:1100%;
 //     text-align: left;
-//     // border: 1px solid grey;
+//     // border: 1px solid $grey;
 //     // height: calc(100vh - 120px);
 //     // width: calc(100vw - 120px);
 //     // display: block;
@@ -268,7 +311,7 @@ footer {
 //     //   span {
 //     //     display: block;
 //     //     margin-left: 5%;
-//     //     // background: grey;
+//     //     // background: $grey;
 //     //   }
 //     //   span:first-child {
 //     //     font-weight:300;
