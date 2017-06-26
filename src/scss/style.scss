@@ -14,7 +14,7 @@ html {
   height: 100%;
 }
 body {
-  margin-top: -3px;
+  margin-top: -2px;
   height: 100%;
   font-family: 'Roboto Slab', serif;
   color: $blue;
@@ -47,8 +47,10 @@ section {
   top: 0;
   bottom: 0;
   padding: 60px;
-  border-bottom: 1px solid $blue;
   overflow: hidden;
+  &:first-child{
+    border-bottom: 1px solid $blue;
+  }
   div.inner {
     border: 1px solid $grey;
     display: block;
@@ -60,15 +62,10 @@ section {
       width: 100%;
       position: relative;
       top: calc(50vh - 60px);
-      // top: 0px;
-      // height: 400px;
+      transition: 0.7s ease;
       display: inline-block;
-      // height:400px;
-      transform: translateY(-52%) translateX(0%);
-      // padding-top: 100px;
-      // background: red;
+      transform: translateY(-52%) translateX(-0%);
       span {
-        // line-height: 100%;
         font-size: 12vw;
         display: block;
         margin-left: 5%;
@@ -98,20 +95,20 @@ section {
       position: absolute;
       display: inline-block;
       width: 100%;
-      // background: green;
       height: 100%;
-      transform: translateX(0%);
+      transform: translateX(160%);
       font-size: 2vw;
       float: left;
-      opacity: 0.3;
-      display: none;
+      display: block;
+      transition: 0.7s ease;
+
     }
     h3.about {
       text-transform: uppercase;
       font-family: 'Roboto', sans-serif;
       position: absolute;
       right: -42px;
-      color: $blue;
+      color: $white;
       top:48%;
       // width: 330px;
       font-size: 17px;
@@ -165,6 +162,17 @@ section {
       margin: 0 auto;
       margin-top: -1px;
       background: $black;
+      &::after{
+        transition: 1s ease;
+        content: "";
+        top: 0;
+        left: 150px;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.1;
+      }
       &:last-child {
         border-bottom: 1px solid $grey;
         margin-bottom: 15%;
@@ -184,7 +192,6 @@ section {
         transform: translateY(-95%);
         position: relative;
         top: 50%;
-        // background: green;
         line-height: 100%;
         font-size: 1.1vw;
       }
@@ -204,14 +211,46 @@ section {
         position: absolute;
         left: 0;
         top: 0;
-        transition: width 1s;
       }
       &:hover {
-        div.imageBox {
-          // width: 80%;
+        &:nth-child(2) {
+          &::after{
+            background: url(/images/BubbleTwo.png) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+          }
         }
-        // border-bottom: 1px solid $grey;
-        // margin-bottom: 10%;
+        &:nth-child(3) {
+          &::after{
+            background: url(/images/BetbucketThree.png) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+          }
+        }
+        &:nth-child(4) {
+          &::after{
+            background: url(/images/SnakeOne.png) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+          }
+        }
+        &:nth-child(5) {
+          &::after{
+            background: url(/images/LazyrecipesSix.png) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+          }
+        }
+
+
       }
     }
   }
@@ -248,38 +287,45 @@ div.box {
 }
 
 footer {
-  height: 350px;
+  height: 360px;
   background: $blue;
   text-align: center;
   position: relative;
-  h3 {
-    background: white;
+  padding: 60px;
+  div.inner{
     position: relative;
-    display: block;
-    top:30%;
-    width: 100px;
-    margin: 0 auto;
-    // transform: translateY(-50%);
-    font-size: 13px;
-    color: $black;
-    line-height: 25px;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    font-weight:100;
+    height: 240px;
+    border: 1px solid $grey;
+    h3 {
+      background: white;
+      position: relative;
+      display: block;
+      top:-13px;
+      width: 100px;
+      z-index: 1000;
+      margin: 0 auto;
+      // transform: translateY(-50%);
+      font-size: 13px;
+      color: $black;
+      line-height: 25px;
+      text-transform: uppercase;
+      font-family: 'Roboto', sans-serif;
+      font-weight:100;
 
-  }
-  div {
-    display: block;
-    position: relative;
-    top:42%;
-    transform: translateY(-50%);
-    span {
-      margin: 0 10px;
-      display: inline-block;
-      font-size: 24px;
-      a {
-        text-decoration: none;
-        color: white;
+    }
+    div {
+      display: block;
+      position: relative;
+      top:38%;
+      transform: translateY(-50%);
+      span {
+        margin: 0 10px;
+        display: inline-block;
+        font-size: 24px;
+        a {
+          text-decoration: none;
+          color: white;
+        }
       }
     }
   }
