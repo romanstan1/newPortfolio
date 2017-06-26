@@ -101,6 +101,13 @@ section {
       float: left;
       display: block;
       transition: 0.7s ease;
+      span{
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        font-size: 110%;
+        color: $white;
+      }
 
     }
     h3.about {
@@ -110,14 +117,11 @@ section {
       right: -42px;
       color: $white;
       top:48%;
-      // width: 330px;
       font-size: 17px;
       line-height: 25px;
       text-align: center;
       transform: rotate(-90deg) translateY(30px);
-      // transform: translateY(-50%);
       font-weight: 100;
-      // background: white;
       cursor: pointer;
     }
     h3.discover {
@@ -147,10 +151,11 @@ section {
         color: $white;
       }
     }
+
+
     div.project {
       position: relative;
       cursor: pointer;
-      padding-left: calc(3% + 150px);
       z-index: 400;
       width: 60%;
       height: 150px;
@@ -177,40 +182,51 @@ section {
         border-bottom: 1px solid $grey;
         margin-bottom: 15%;
       }
-      h4 {
-        transform: translateY(-85%);
-        position: relative;
-        top: 50%;
-        color: $white;
-        line-height: 100%;
-        font-size: 2.5vw;
-      }
-      p {
-        text-transform: uppercase;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 100;
-        transform: translateY(-95%);
-        position: relative;
-        top: 50%;
-        line-height: 100%;
-        font-size: 1.1vw;
-      }
-      div.imageBox {
-        background: black;
-        color: $black;
-        line-height: 149px;
-        text-align: center;
-        font-size: 10vw;
-        display: inline-block;
-        border-right: 1px solid $grey;
-        border-bottom: 1px solid $grey;
-        overflow: hidden;
-        height: 149px;
-        width: 150px;
-        font-weight: 600;
-        position: absolute;
-        left: 0;
+      a {
         top: 0;
+        left: 0px;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        text-decoration: none;
+        color: inherit;
+        padding-left: calc(3% + 150px);
+        h4 {
+          transform: translateY(-85%);
+          position: relative;
+          top: 50%;
+          color: $white;
+          line-height: 100%;
+          font-size: 2.5vw;
+        }
+        p {
+          text-transform: uppercase;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 100;
+          transform: translateY(-95%);
+          position: relative;
+          top: 50%;
+          line-height: 100%;
+          font-size: 1.1vw;
+        }
+        div.imageBox {
+          background: black;
+          color: $black;
+          line-height: 149px;
+          text-align: center;
+          font-size: 10vw;
+          display: inline-block;
+          border-right: 1px solid $grey;
+          border-bottom: 1px solid $grey;
+          overflow: hidden;
+          height: 149px;
+          width: 150px;
+          font-weight: 600;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+
       }
       &:hover {
         &:nth-child(2) {
@@ -249,6 +265,8 @@ section {
             background-size: cover;
           }
         }
+
+
 
 
       }
