@@ -30,13 +30,7 @@ div.lineOverlay {
   z-index: 200;
   background: $grey;
   &:nth-of-type(1){
-    left:60px;
-  }
-  &:nth-of-type(1){
     left:50%;
-  }
-  &:nth-of-type(3){
-    right:60px;
   }
 }
 
@@ -57,7 +51,6 @@ section {
     width: 100%;
     min-height: calc(100vh - 120px);
     position: relative;
-    // overflow: hidden;
     div.myName {
       width: 100%;
       position: relative;
@@ -91,13 +84,12 @@ section {
     div.aboutMe {
       padding: 5%;
       top: calc(50vh - 60px);
-      top: 0px;
+      top: 50%;
       position: absolute;
       display: inline-block;
       width: 100%;
-      height: 100%;
-      transform: translateX(160%);
-      font-size: 2vw;
+      transform: translateY(-50%);
+      font-size: 25px;
       float: left;
       display: block;
       transition: 0.7s ease;
@@ -108,7 +100,6 @@ section {
         font-size: 110%;
         color: $white;
       }
-
     }
     h3.about {
       text-transform: uppercase;
@@ -129,16 +120,18 @@ section {
       font-family: 'Roboto', sans-serif;
       position: absolute;
       z-index: 200;
-      line-height: 25px;
       bottom: -12px;
       width: 100%;
       text-align: center;
       font-weight: 100;
-      font-size: 13px;
       background: white;
       width: 200px;
       left: calc(50% - 100px);
       a {
+        display: inline-block;
+        font-size: 13px;
+        line-height: 25px;
+        padding: 0 20px;
         text-decoration: none;
         color: $black;
       }
@@ -192,22 +185,26 @@ section {
         color: inherit;
         padding-left: calc(3% + 150px);
         h4 {
-          transform: translateY(-85%);
+          // transform: translateY(-85%);
           position: relative;
-          top: 50%;
+          top: 35%;
           color: $white;
           line-height: 100%;
-          font-size: 2.5vw;
+          // height: 100%;
+          font-size: 30px;
+          // background: rgba(255,255,255,0.2);
         }
         p {
+          margin-top: 10px;
+          // background: rgba(255,255,255,0.2);
           text-transform: uppercase;
           font-family: 'Roboto', sans-serif;
           font-weight: 100;
-          transform: translateY(-95%);
+          // transform: translateY(-95%);
           position: relative;
-          top: 50%;
+          top: 35%;
           line-height: 100%;
-          font-size: 1.1vw;
+          font-size: 13px;
         }
         div.imageBox {
           background: black;
@@ -226,7 +223,6 @@ section {
           left: 0;
           top: 0;
         }
-
       }
       &:hover {
         &:nth-child(2) {
@@ -349,41 +345,129 @@ footer {
   }
 }
 
-// section.landing {
-//   // position: absolute;
-//   // width: 100%;
-//   // height: 100%;
-//   // background: green;
-//   // padding: 60px;
-//   // top: 0;
-//   // bottom: 0;
-//   div.myName {
-//     font-size:1100%;
-//     text-align: left;
-//     // border: 1px solid $grey;
-//     // height: calc(100vh - 120px);
-//     // width: calc(100vw - 120px);
-//     // display: block;
-//     // width: 100%;
-//     // height: 100%;
-//     // margin: 60px;
-//     position: relative;
-//     // div {
-//     //   position: relative;
-//     //   top:50%;
-//     //   transform: translateY(-55%);
-//     //   span {
-//     //     display: block;
-//     //     margin-left: 5%;
-//     //     // background: $grey;
-//     //   }
-//     //   span:first-child {
-//     //     font-weight:300;
-//     //   }
-//     //   span:last-child {
-//     //     margin-top: -30px;
-//     //     font-weight:700;
-//     //   }
-//     // }
-//   }
-// }
+
+
+
+@media only screen and (max-width: 1040px) {
+
+  section {
+    div.inner {
+      div.aboutMe {
+        font-size: 22px;
+      }
+      div.project {
+        width: 70%;
+        a {
+          padding-left: calc(6% + 150px);
+          h4 {
+            font-size: 26px;
+          }
+          p {
+            font-size: 12px;
+          }
+          div.imageBox {
+
+          }
+        }
+      }
+    }
+  } //end of section
+
+} // end of @media
+
+
+@media only screen and (max-width: 840px) {
+
+  section {
+    padding: 30px;
+    div.inner {
+      div.aboutMe {
+        font-size: 20px;
+      }
+      div.project {
+        width: 80%;
+        &::after{
+          left: 0px;
+        }
+
+        a {
+          padding-left: calc(6% + 5px);
+          h4 {
+
+          }
+          p {
+
+          }
+          div.imageBox {
+            display: none;
+          }
+        }
+      }
+    }
+  } //end of section
+
+  div.box {
+    width: 31px;
+    height: 31px;
+  }
+
+
+  div.lineOverlay {
+    margin-top: -30px;
+  }
+
+  footer {
+    height: 300px;
+    padding: 30px;
+    div.inner{
+      div {
+        span {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+} // end of @media
+
+
+@media only screen and (max-width: 580px) {
+
+  section {
+    div.inner {
+      div.aboutMe {
+        font-size: 17px;
+      }
+      div.project {
+        width: calc(100% + 2px);
+        left:-1px;
+
+        a {
+          h4 {
+
+          }
+          p {
+
+          }
+          div.imageBox {
+          }
+        }
+      }
+    }
+  } //end of section
+} // end of @media
+
+
+
+
+@media only screen and (max-width: 420px) {
+
+  section {
+    div.inner {
+      div.aboutMe {
+        font-size: 14px;
+      }
+    }
+  }
+
+}
